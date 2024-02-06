@@ -4,16 +4,16 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/expo/expo-github-action/releases" title="Latest release">
+  <a href="https://github.com/mishkeTz/expo-github-actions/releases" title="Latest release">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/package-json/v/expo/expo-github-action?style=flat-square&color=0366D6&labelColor=49505A">
-      <img alt="Latest release" src="https://img.shields.io/github/package-json/v/expo/expo-github-action?style=flat-square&color=0366D6&labelColor=D1D5DA" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/package-json/v/mishkeTz/expo-github-actions?style=flat-square&color=0366D6&labelColor=49505A">
+      <img alt="Latest release" src="https://img.shields.io/github/package-json/v/mishkeTz/expo-github-actions?style=flat-square&color=0366D6&labelColor=D1D5DA" />
     </picture>
   </a>
-  <a href="https://github.com/expo/expo-github-action/actions" title="Workflow status">
+  <a href="https://github.com/mishkeTz/expo-github-actions/actions" title="Workflow status">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/expo/expo-github-action/test.yml?branch=main&style=flat-square&labelColor=49505A">
-      <img alt="Workflow status" src="https://img.shields.io/github/actions/workflow/status/expo/expo-github-action/test.yml?branch=main&style=flat-square&labelColor=D1D5DA" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/mishkeTz/expo-github-actions/test.yml?branch=main&style=flat-square&labelColor=49505A">
+      <img alt="Workflow status" src="https://img.shields.io/github/actions/workflow/status/mishkeTz/expo-github-actions/test.yml?branch=main&style=flat-square&labelColor=D1D5DA" />
     </picture>
   </a>
 </p>
@@ -88,7 +88,7 @@ jobs:
           cache: yarn
 
       - name: 🏗 Setup EAS
-        uses: expo/expo-github-action@v8
+        uses: mishkeTz/expo-github-actions@1.0.0
         with:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
@@ -127,7 +127,7 @@ jobs:
           cache: yarn
 
       - name: 🏗 Setup EAS
-        uses: expo/expo-github-action@v8
+        uses: mishkeTz/expo-github-actions@1.0.0
         with:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
@@ -163,7 +163,7 @@ jobs:
           cache: yarn
 
       - name: 🏗 Setup EAS
-        uses: expo/expo-github-action@v8
+        uses: mishkeTz/expo-github-actions@1.0.0
         with:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
@@ -172,7 +172,7 @@ jobs:
         run: yarn install
 
       - name: 🚀 Create preview
-        uses: expo/expo-github-action/preview@v8
+        uses: mishkeTz/expo-github-actions/preview@1.0.0
         with:
           # `github.event.pull_request.head.ref` is only available on `pull_request` triggers.
           # Use your own, or keep the automatically infered branch name from `--auto`, when using different triggers.
