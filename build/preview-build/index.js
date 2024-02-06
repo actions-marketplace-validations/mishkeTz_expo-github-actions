@@ -88888,12 +88888,7 @@ exports.previewAction = previewAction;
  */
 function sanitizeCommand(input) {
     let command = input.trim();
-    if (!command.startsWith('eas')) {
-        throw new Error(`The command must start with "eas", received "${command}"`);
-    }
-    else {
-        command = command.replace(/^eas/, '').trim();
-    }
+    command = command.replace(/^eas/, '').trim();
     return command;
 }
 async function maybeCancelPreviousBuildsAsync(config, input) {
