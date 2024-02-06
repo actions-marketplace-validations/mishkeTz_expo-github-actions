@@ -1,19 +1,19 @@
 {
   "private": true,
-  "name": "expo-github-action",
-  "version": "8.2.1",
+  "name": "expo-github-actions",
+  "version": "1.0.0",
   "description": "Expo CLI in your GitHub Actions workflow",
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/expo/expo-github-action.git"
+    "url": "git+https://github.com/mishkeTz/expo-github-actions.git"
   },
   "author": "Cedric van Putten <me@bycedric.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/expo/expo-github-action/issues"
+    "url": "https://github.com/mishkeTz/expo-github-actions/issues"
   },
-  "homepage": "https://github.com/expo/expo-github-action#readme",
+  "homepage": "https://github.com/mishkeTz/expo-github-actions#readme",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
