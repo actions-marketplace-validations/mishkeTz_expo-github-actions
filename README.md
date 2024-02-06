@@ -179,6 +179,46 @@ jobs:
           command: eas update --auto --branch ${{ github.event.pull_request.head.ref }}
 ```
 
+### Create previews on PRs with dynamic ENV variables
+
+Reviewing pull requests can take some time.
+The reviewer needs to check out the branch, install the changes, and run the bundler to review the results.
+You can also automatically publish the project for the reviewer to skip those manual steps.
+
+> See the [preview docs](./preview#create-previews-on-pull-requests) for more information.
+
+```yml
+on: [pull_request]
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: 🏗 Setup EAS
+        uses: mishkeTz/expo-github-actions@1.0.0
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: 🚀 Create preview
+        uses: mishkeTz/expo-github-actions/preview@1.0.0
+        with:
+          # `github.event.pull_request.head.ref` is only available on `pull_request` triggers.
+          # Use your own, or keep the automatically infered branch name from `--auto`, when using different triggers.
+          command: SOME_ENV_VAR=123 eas update --auto --branch ${{ github.event.pull_request.head.ref }}
+```
+
 ## Things to know
 
 ### Automatic Expo login
